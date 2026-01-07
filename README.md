@@ -1,24 +1,25 @@
-# 🏛️ Public Service Portal Template
+<div align="center">
+<img src="assets/logo.png" alt="Public Service Portal Logo" width="80" height="80">
+<h1>Public Service Portal Template</h1>
+
+![License](https://img.shields.io/badge/license-MIT-blue.svg) ![Version](https://img.shields.io/badge/version-1.0.0-green.svg) ![Dependencies](https://img.shields.io/badge/dependencies-none-success.svg)
+
+<br>
+
+<h3>Modern, Responsive Web Template for Government Public Services</h3>
+<p><i>A comprehensive portal solution built with Vanilla HTML/CSS/JS for citizen-facing services.</i></p>
+</div>
 
 <div align="center">
 
-![Public Service Portal Logo](assets/logo.png)
-
-**A Modern, Responsive Web Template for Government Public Service Portals**
-
-[![Live Preview](https://img.shields.io/badge/Live-Preview-brightgreen?style=for-the-badge)](https://public-services-template.vercel.app)
-[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
-[![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-
----
-
-**[🚀 Live Demo](https://public-services-template.vercel.app)** • **[📖 Documentation](#features)** • **[🎨 Screenshots](#screenshots)**
+[![Live Preview](https://img.shields.io/badge/🚀_Live_Preview-Visit_Demo-2ea44f?style=for-the-badge&logo=vercel)](https://public-services-template.vercel.app)
 
 </div>
 
----
+<div align="center" style="display: flex; gap: 10px;">
+    <img src="assets/darkmode.png" alt="Dark Mode Preview" width="48%">
+    <img src="assets/lightmode.png" alt="Light Mode Preview" width="48%">
+</div>
 
 ## 📋 About This Template
 
@@ -206,18 +207,6 @@ The **Public Service Portal** is a comprehensive, ready-to-use website template 
 - Email address
 - Phone number
 - Password + confirmation
-
----
-
-## 🎨 Screenshots
-
-### 🌞 Light Mode
-![Light Mode Screenshot](assets/lightmode.png)
-*Clean, professional interface optimized for daytime use*
-
-### 🌙 Dark Mode
-![Dark Mode Screenshot](assets/darkmode.png)
-*Easy on the eyes with automatic theme switching*
 
 ---
 
