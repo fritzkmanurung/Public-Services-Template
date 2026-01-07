@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Service Portal - Home</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../../assets/logo.png" type="image/png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="app-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="../../assets/logo.png" alt="Logo" height="36" style="margin-right: 5px;">
+                <span>Public Service</span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="../services/index.html" class="nav-link">Services</a>
+                <a href="../user/status.html" class="nav-link">Check Status</a>
+                <a href="../support/faq.html" class="nav-link">Help & FAQ</a>
+            </nav>
+
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <button class="btn btn-outline theme-toggle"
+                    style="padding: 8px 12px; border: none; font-size: 1.2rem;">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="../auth/login.html" class="btn btn-primary">
+                    Sign In / Sign Up
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+
+        <!-- Hero Section -->
+        <section class="hero-section"
+            style="padding: 120px 0 80px; background-color: var(--color-secondary); text-align: center; position: relative; overflow: hidden;">
+            <!-- Simple pattern overlay -->
+            <div
+                style="position: absolute; inset: 0; background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 30px 30px; opacity: 0.3; pointer-events: none;">
+            </div>
+
+            <div class="container" style="position: relative; z-index: 1;">
+                <span class="badge badge-info" style="margin-bottom: 20px; font-size: 0.85rem; padding: 6px 16px;"><i
+                        class="fas fa-bolt"></i> Integrated Digital Services 2.0</span>
+                <h1
+                    style="font-size: 3.5rem; margin-bottom: 20px; color: var(--color-primary-dark); font-weight: 800; letter-spacing: -1px;">
+                    Manage Public Services <br><span style="color: var(--color-primary);">As Easy as Online
+                        Shopping</span></h1>
+                <p
+                    style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 50px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.8;">
+                    No queues, no hassle. Access hundreds of local government services directly from your device.
+                    Official, Secure, and Transparent.
+                </p>
+
+                <!-- Search Bar -->
+                <div class="search-box" style="margin: 0 auto; max-width: 600px; position: relative;">
+                    <input type="text" placeholder="Search services (e.g., 'ID Card', 'Tax', 'Business License')"
+                        style="width: 100%; padding: 20px 24px; padding-left: 60px; border-radius: 50px; border: 1px solid var(--border-color); font-size: 1.1rem; box-shadow: var(--shadow-md); outline: none;">
+                    <i class="fas fa-search"
+                        style="position: absolute; left: 24px; top: 50%; transform: translateY(-50%); color: var(--color-primary); font-size: 1.2rem;"></i>
+                    <button class="btn btn-primary"
+                        style="position: absolute; right: 8px; top: 8px; bottom: 8px; border-radius: 40px; padding: 0 30px;">
+                        Search
+                    </button>
+                </div>
+
+                <div style="margin-top: 30px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                    <span style="color: var(--text-muted);">Popular:</span>
+                    <a href="#" class="badge badge-info" style="cursor: pointer; text-decoration: none;">e-ID Card</a>
+                    <a href="#" class="badge badge-info" style="cursor: pointer; text-decoration: none;">Birth
+                        Certificate</a>
+                    <a href="#" class="badge badge-info" style="cursor: pointer; text-decoration: none;">Vehicle Tax</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Categories -->
+        <section class="section" style="padding: 80px 0;">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 50px;">Main Categories</h2>
+
+                <div class="grid-categories"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+                    <!-- Card 1 -->
+                    <a href="../services/index.html?cat=population" class="card category-card"
+                        style="text-align: center; text-decoration: none; display: block;">
+                        <div class="icon-circle"
+                            style="width: 80px; height: 80px; background: var(--color-secondary); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 20px;">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <h3 style="font-size: 1.25rem;">Population</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">ID Cards, Family Cards, Birth Certs,
+                            and civil documents.</p>
+                    </a>
+
+                    <!-- Card 2 -->
+                    <a href="../services/index.html?cat=business" class="card category-card"
+                        style="text-align: center; text-decoration: none; display: block;">
+                        <div class="icon-circle"
+                            style="width: 80px; height: 80px; background: hsl(40, 90%, 90%); color: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 20px;">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h3 style="font-size: 1.25rem;">Business Permits</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">SIUP, TDP, IMB, and commercial
+                            licenses.</p>
+                    </a>
+
+                    <!-- Card 3 -->
+                    <a href="../services/index.html?cat=health" class="card category-card"
+                        style="text-align: center; text-decoration: none; display: block;">
+                        <div class="icon-circle"
+                            style="width: 80px; height: 80px; background: hsl(340, 80%, 95%); color: hsl(340, 70%, 50%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 20px;">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3 style="font-size: 1.25rem;">Health</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Social Security (BPJS), Vaccination,
+                            and clinic services.</p>
+                    </a>
+
+                    <!-- Card 4 -->
+                    <a href="../services/index.html?cat=tax" class="card category-card"
+                        style="text-align: center; text-decoration: none; display: block;">
+                        <div class="icon-circle"
+                            style="width: 80px; height: 80px; background: hsl(150, 60%, 90%); color: hsl(150, 80%, 35%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 20px;">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <h3 style="font-size: 1.25rem;">Tax & Levy</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Property Tax, Vehicle Tax, and regional
+                            payments.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works (Flow) -->
+        <section class="section"
+            style="padding: 60px 0; background-color: var(--bg-card); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 50px;">
+                    <h2 style="font-size: 2rem;">Easy, Fast, Transparent</h2>
+                    <p style="color: var(--text-muted);">Complete your public service requests in just 4 simple steps.
+                    </p>
+                </div>
+
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; text-align: center;">
+                    <div style="position: relative;">
+                        <div
+                            style="width: 60px; height: 60px; background: var(--color-primary-light); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 20px;">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 10px;">1. Find Service</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Find the service you need via search or
+                            category.</p>
+                    </div>
+
+                    <div style="position: relative;">
+                        <div
+                            style="width: 60px; height: 60px; background: var(--color-primary-light); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 20px;">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 10px;">2. Fill Form</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Complete personal data and upload
+                            required documents digitally.</p>
+                    </div>
+
+                    <div style="position: relative;">
+                        <div
+                            style="width: 60px; height: 60px; background: var(--color-primary-light); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 20px;">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 10px;">3. Track Process</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Check your application status in
+                            real-time via dashboard.</p>
+                    </div>
+
+                    <div style="position: relative;">
+                        <div
+                            style="width: 60px; height: 60px; background: var(--color-primary-light); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 20px;">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 10px;">4. Done</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Download digital documents or pick up
+                            physical documents at the office.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Real-time Stats -->
+        <section class="section" style="padding: 60px 0; background-color: var(--color-primary-dark); color: white;">
+            <div class="container">
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center;">
+                    <div>
+                        <h2 style="font-size: 2.5rem; color: var(--color-accent); margin-bottom: 5px;">15,000+</h2>
+                        <p style="opacity: 0.8;">Citizens Served</p>
+                    </div>
+                    <div>
+                        <h2 style="font-size: 2.5rem; color: var(--color-accent); margin-bottom: 5px;">98%</h2>
+                        <p style="opacity: 0.8;">Satisfaction Index</p>
+                    </div>
+                    <div>
+                        <h2 style="font-size: 2.5rem; color: var(--color-accent); margin-bottom: 5px;">24 Hr</h2>
+                        <p style="opacity: 0.8;">Avg. Response Time</p>
+                    </div>
+                    <div>
+                        <h2 style="font-size: 2.5rem; color: var(--color-accent); margin-bottom: 5px;">50+</h2>
+                        <p style="opacity: 0.8;">Online Services</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured/News Section -->
+        <section class="section" style="padding: 80px 0; background-color: var(--bg-card);">
+            <div class="container">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;">
+                    <h2>Latest Updates</h2>
+                    <a href="#" class="btn btn-outline">View All</a>
+                </div>
+
+                <div class="grid-news"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
+                    <!-- News Item -->
+                    <article class="card" style="padding: 0; overflow: hidden;">
+                        <div
+                            style="height: 200px; background-color: var(--color-secondary); display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
+                            <i class="fas fa-image fa-3x"></i>
+                        </div>
+                        <div style="padding: 24px;">
+                            <span class="badge badge-success"
+                                style="margin-bottom: 10px; display: inline-block;">News</span>
+                            <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Digital ID Now Available</h3>
+                            <p style="color: var(--text-muted); margin-bottom: 20px;">Citizens can now activate their
+                                Digital Population Identity via the application...</p>
+                            <a href="#" style="color: var(--color-primary); font-weight: 600;">Read More
+                                &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="card" style="padding: 0; overflow: hidden;">
+                        <div
+                            style="height: 200px; background-color: var(--color-secondary); display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
+                            <i class="fas fa-image fa-3x"></i>
+                        </div>
+                        <div style="padding: 24px;">
+                            <span class="badge badge-warning"
+                                style="margin-bottom: 10px; display: inline-block;">Announcement</span>
+                            <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Holiday Service Schedule</h3>
+                            <p style="color: var(--text-muted); margin-bottom: 20px;">Information regarding operational
+                                hours changes during the holiday season...</p>
+                            <a href="#" style="color: var(--color-primary); font-weight: 600;">Read More
+                                &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners / Trust -->
+        <section style="padding: 40px 0; border-top: 1px solid var(--border-color); background: var(--bg-body);">
+            <div class="container" style="text-align: center;">
+                <p
+                    style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 20px; font-weight: 600;">
+                    Supported By Agencies</p>
+                <div
+                    style="display: flex; gap: 40px; justify-content: center; align-items: center; opacity: 0.6; flex-wrap: wrap;">
+                    <div style="font-weight: 700; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;"><i
+                            class="fas fa-building"></i> PROV GOV</div>
+                    <div style="font-weight: 700; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;"><i
+                            class="fas fa-id-card"></i> HOME AFFAIRS</div>
+                    <div style="font-weight: 700; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;"><i
+                            class="fas fa-heartbeat"></i> HEALTH MIN</div>
+                    <div style="font-weight: 700; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;"><i
+                            class="fas fa-shield-alt"></i> NAT POLICE</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section
+            style="padding: 100px 0; background-color: var(--color-primary); color: white; text-align: center; position: relative; overflow: hidden;">
+            <!-- Decorative circle -->
+            <div
+                style="position: absolute; top: -50px; left: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%;">
+            </div>
+            <div
+                style="position: absolute; bottom: -50px; right: -50px; width: 300px; height: 300px; background: rgba(255,255,255,0.1); border-radius: 50%;">
+            </div>
+
+            <div class="container" style="position: relative; z-index: 1;">
+                <h2 style="color: white; margin-bottom: 20px; font-size: 2.5rem;">Need Urgent Help?</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9; max-width: 600px; margin: 0 auto 40px;">
+                    Our support team is ready to help 24/7. Don't hesitate to contact us if you experience issues.</p>
+                <div style="display: flex; gap: 20px; justify-content: center;">
+                    <a href="../support/faq.html" class="btn"
+                        style="background: white; color: var(--color-primary); border: none; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">View
+                        FAQ</a>
+                    <a href="#" class="btn btn-accent" style="box-shadow: 0 10px 20px rgba(0,0,0,0.2);">Contact Us
+                        Now</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="color: white; margin-bottom: 20px;">
+                        <i class="fas fa-landmark"></i>
+                        <span>Public Service</span>
+                    </div>
+                    <p style="opacity: 0.8; font-size: 0.95rem;">
+                        Integrated platform to access public services easily, transparently, and efficiently.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Population</a></li>
+                        <li><a href="#">Business Permits</a></li>
+                        <li><a href="#">Health</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="../support/faq.html">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone-alt"></i> 1500-123</li>
+                        <li><i class="fas fa-envelope"></i> help@service.go.id</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; opacity: 0.6; font-size: 0.9rem;">
+                &copy; 2026 Public Service Portal. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Catalog - Public Service Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../../assets/logo.png" type="image/png">
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .catalog-wrapper {
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 40px;
+        }
+
+        .filter-sidebar {
+            position: sticky;
+            top: calc(var(--header-height) + 20px);
+            align-self: start;
+        }
+
+        .catalog-header {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            gap: 15px;
+        }
+
+        .catalog-header h1 {
+            margin: 0;
+        }
+
+        .catalog-header>div {
+            width: 100%;
+        }
+
+        .search-box {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .service-card {
+            display: flex;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .service-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 8px;
+            gap: 10px;
+        }
+
+        .service-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .catalog-wrapper {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 20px 15px;
+            }
+
+            .filter-sidebar {
+                position: static;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            .filter-sidebar.active {
+                max-height: 800px;
+            }
+
+            .catalog-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .catalog-header h1 {
+                font-size: 1.75rem !important;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+
+            .service-card {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .service-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.25rem;
+            }
+
+            .service-header {
+                flex-direction: column;
+                align-items: start;
+                gap: 8px;
+            }
+
+            .service-content .btn {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .service-meta {
+                gap: 10px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="app-header">
+        <div class="container">
+            <a href="../home/index.html" class="logo">
+                <img src="../../assets/logo.png" alt="Logo" height="36" style="margin-right: 5px;">
+                <span>Public Service</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="../home/index.html" class="nav-link">Home</a>
+                <a href="index.html" class="nav-link active">Services</a>
+                <a href="../user/status.html" class="nav-link">Check Status</a>
+                <a href="../support/faq.html" class="nav-link">Help & FAQ</a>
+            </nav>
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <button class="btn btn-outline theme-toggle" style="border:none; font-size:1.2rem;">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="../auth/login.html" class="btn btn-primary">Sign In / Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-wrapper container catalog-wrapper">
+
+        <!-- Sidebar Filter -->
+        <aside class="filter-sidebar" id="filterSidebar">
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h3 style="font-size: 1.2rem; margin: 0;">Filter Services</h3>
+                    <button id="closeFilterBtn" class="btn btn-outline btn-sm"
+                        style="display: none; padding: 5px 10px; font-size: 0.8rem;">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; font-weight: 500; margin-bottom: 8px;">Category</label>
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <label style="display: flex; gap: 10px; align-items: center; cursor: pointer;">
+                            <input type="checkbox" checked> Population
+                        </label>
+                        <label style="display: flex; gap: 10px; align-items: center; cursor: pointer;">
+                            <input type="checkbox"> Business Permits
+                        </label>
+                        <label style="display: flex; gap: 10px; align-items: center; cursor: pointer;">
+                            <input type="checkbox"> Health
+                        </label>
+                        <label style="display: flex; gap: 10px; align-items: center; cursor: pointer;">
+                            <input type="checkbox"> Tax & Revenue
+                        </label>
+                        <label style="display: flex; gap: 10px; align-items: center; cursor: pointer;">
+                            <input type="checkbox"> Spatial Planning
+                        </label>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; font-weight: 500; margin-bottom: 8px;">Online Availability</label>
+                    <select class="form-control"
+                        style="width: 100%; padding: 8px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+                        <option>All Services</option>
+                        <option>Online Only</option>
+                        <option>Offline / Visit</option>
+                    </select>
+                </div>
+
+                <hr style="margin: 20px 0; border: none; border-top: 1px solid var(--border-color);">
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="font-size: 1rem; margin-bottom: 10px;">Popular Tags</h4>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span class="badge badge-info">KTP</span>
+                        <span class="badge badge-info">Family Card</span>
+                        <span class="badge badge-info">Birth Cert</span>
+                        <span class="badge badge-info">Building Permit</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <section>
+            <div class="catalog-header">
+                <h1>Service Catalog</h1>
+                <div style="display: flex; gap: 10px; align-items: center; width: 100%;">
+                    <button id="toggleFilterBtn" class="btn btn-outline" style="display: none;">
+                        <i class="fas fa-filter"></i> Filter
+                    </button>
+                    <div class="search-box" style="flex: 1;">
+                        <input type="text" placeholder="Search services..."
+                            style="width: 100%; padding: 10px 15px; padding-right: 40px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+                        <i class="fas fa-search"
+                            style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-list" style="display: flex; flex-direction: column; gap: 20px;">
+                <!-- Service Item 1 -->
+                <div class="card service-card">
+                    <div class="service-icon" style="background: var(--color-secondary); color: var(--color-primary);">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-header">
+                            <h3 style="font-size: 1.1rem; margin: 0;">New e-ID Card Issuance</h3>
+                            <span class="badge badge-success">Online</span>
+                        </div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px;">Application for
+                            electronic ID card for residents turning 17 or replacements (lost/damaged).</p>
+                        <div class="service-meta">
+                            <span><i class="far fa-clock"></i> 3 Work Days</span>
+                            <span><i class="far fa-building"></i> Population Office</span>
+                        </div>
+                        <a href="detail.html" class="btn btn-primary" style="margin-top: 15px;">Apply Now</a>
+                    </div>
+                </div>
+
+                <!-- Service Item 2 -->
+                <div class="card service-card">
+                    <div class="service-icon" style="background: hsl(40, 90%, 95%); color: var(--color-accent);">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-header">
+                            <h3 style="font-size: 1.1rem; margin: 0;">Micro Business Permit (IUMK)</h3>
+                            <span class="badge badge-success">Online</span>
+                        </div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px;">Issuance of micro
+                            and small business licenses online via OSS system.</p>
+                        <div class="service-meta">
+                            <span><i class="far fa-clock"></i> 1 Work Day</span>
+                            <span><i class="far fa-building"></i> Investment Office</span>
+                        </div>
+                        <a href="#" class="btn btn-outline" style="margin-top: 15px;">Details</a>
+                    </div>
+                </div>
+
+                <!-- Service Item 3 -->
+                <div class="card service-card">
+                    <div class="service-icon" style="background: hsl(340, 80%, 95%); color: hsl(340, 70%, 50%);">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-header">
+                            <h3 style="font-size: 1.1rem; margin: 0;">Birth Certificate</h3>
+                            <span class="badge badge-success">Online</span>
+                        </div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px;">Registration and
+                            recording of new births to obtain birth certificate citations.</p>
+                        <div class="service-meta">
+                            <span><i class="far fa-clock"></i> 5 Work Days</span>
+                            <span><i class="far fa-building"></i> Population Office</span>
+                        </div>
+                        <a href="detail.html" class="btn btn-primary" style="margin-top: 15px;">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div style="margin-top: 30px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+                <button class="btn btn-outline" disabled>&laquo;</button>
+                <button class="btn btn-primary">1</button>
+                <button class="btn btn-outline">2</button>
+                <button class="btn btn-outline">3</button>
+                <button class="btn btn-outline">&raquo;</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="color: white; margin-bottom: 20px;">
+                        <i class="fas fa-landmark"></i>
+                        <span>Public Service</span>
+                    </div>
+                    <p style="opacity: 0.8; font-size: 0.95rem;">
+                        Integrated platform to access public services easily, transparently, and efficiently.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Population</a></li>
+                        <li><a href="#">Business Permits</a></li>
+                        <li><a href="#">Health</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone-alt"></i> 1500-123</li>
+                        <li><i class="fas fa-envelope"></i> help@service.go.id</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; opacity: 0.6; font-size: 0.9rem;">
+                &copy; 2026 Public Service Portal. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/main.js"></script>
+    <script>
+        // Mobile Filter Toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterSidebar = document.getElementById('filterSidebar');
+            const toggleBtn = document.getElementById('toggleFilterBtn');
+            const closeBtn = document.getElementById('closeFilterBtn');
+
+            function updateFilterUI() {
+                if (window.innerWidth <= 768) {
+                    toggleBtn.style.display = 'block';
+                    closeBtn.style.display = 'block';
+                } else {
+                    toggleBtn.style.display = 'none';
+                    closeBtn.style.display = 'none';
+                    filterSidebar.classList.remove('active');
+                }
+            }
+
+            toggleBtn.addEventListener('click', () => {
+                filterSidebar.classList.add('active');
+            });
+
+            closeBtn.addEventListener('click', () => {
+                filterSidebar.classList.remove('active');
+            });
+
+            window.addEventListener('resize', updateFilterUI);
+            updateFilterUI();
+        });
+    </script>
+</body>
+
+</html>

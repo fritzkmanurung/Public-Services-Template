@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center - Public Service Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../../assets/logo.png" type="image/png">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+
+    <header class="app-header">
+        <div class="container">
+            <a href="../home/index.html" class="logo">
+                <img src="../../assets/logo.png" alt="Logo" height="36" style="margin-right: 5px;"><span>Public
+                    Service</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="../home/index.html" class="nav-link">Home</a>
+                <a href="../services/index.html" class="nav-link">Services</a>
+                <a href="../user/status.html" class="nav-link">Check Status</a>
+                <a href="faq.html" class="nav-link active">Help & FAQ</a>
+            </nav>
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <button class="btn btn-outline theme-toggle" style="border:none;"><i class="fas fa-moon"></i></button>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="../auth/login.html" class="btn btn-primary">Sign In / Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-wrapper container" style="padding: 60px 20px;">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto 50px;">
+            <h1 style="margin-bottom: 20px;">How can we help?</h1>
+            <div style="position: relative;">
+                <input type="text" placeholder="Search keywords (e.g. 'forgot password', 'requirements')..."
+                    style="width: 100%; padding: 15px 20px; padding-left: 50px; border: 1px solid var(--border-color); border-radius: 50px; font-size: 1.1rem;">
+                <i class="fas fa-search"
+                    style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+            </div>
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="card" style="margin-bottom: 30px;">
+                <h3 style="margin-bottom: 20px;">Frequently Asked Questions</h3>
+
+                <!-- FAQ Item 1 -->
+                <div style="border-bottom: 1px solid var(--border-color); padding: 20px 0;">
+                    <details>
+                        <summary
+                            style="font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                            How do I register an account?
+                            <i class="fas fa-chevron-down" style="font-size: 0.8rem; color: var(--text-muted);"></i>
+                        </summary>
+                        <p style="margin-top: 15px; color: var(--text-muted); line-height: 1.6;">
+                            Click the "Sign In / Sign Up" button at the top right, then select "Create Account". Fill in
+                            your NIK, Name, Email, and Password accurately.
+                        </p>
+                    </details>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div style="border-bottom: 1px solid var(--border-color); padding: 20px 0;">
+                    <details>
+                        <summary
+                            style="font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                            What documents are required for e-ID Card?
+                            <i class="fas fa-chevron-down" style="font-size: 0.8rem; color: var(--text-muted);"></i>
+                        </summary>
+                        <p style="margin-top: 15px; color: var(--text-muted); line-height: 1.6;">
+                            Generally, you need an introductory letter from RT/RW and a photocopy of your Family Card
+                            (KK). For replacements due to loss, a police report is also required.
+                        </p>
+                    </details>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div style="border-bottom: 1px solid var(--border-color); padding: 20px 0;">
+                    <details>
+                        <summary
+                            style="font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                            Is this service free?
+                            <i class="fas fa-chevron-down" style="font-size: 0.8rem; color: var(--text-muted);"></i>
+                        </summary>
+                        <p style="margin-top: 15px; color: var(--text-muted); line-height: 1.6;">
+                            Most population administration services (KTP, KK, Akta) are <strong>FREE of charge</strong>.
+                            Some licensing services may have official levies according to regional regulations.
+                        </p>
+                    </details>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <p style="margin-bottom: 20px; color: var(--text-muted);">Still haven't found an answer?</p>
+                <div style="display: flex; gap: 20px; justify-content: center;">
+                    <a href="#" class="btn btn-outline"><i class="fab fa-whatsapp"></i> Chat WhatsApp</a>
+                    <a href="#" class="btn btn-outline"><i class="fas fa-envelope"></i> Email Support</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/main.js"></script>
+</body>
+
+</html>
